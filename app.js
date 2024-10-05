@@ -24,8 +24,7 @@ form.addEventListener("submit", async (app) => {
     following.innerHTML += response.data.following;
     followers.innerHTML += response.data.followers;
   } catch (err) {
-    console.log(err.response.data.message);
+    alert(err.response.data.message);
   }
 });
 
-// 
