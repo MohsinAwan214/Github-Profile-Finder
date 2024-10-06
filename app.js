@@ -1,5 +1,5 @@
 let form = document.querySelector("#form");
-let main = document.querySelector("#main");
+let main = document.querySelector("#main");8
 main.style.display = "none"
 form.addEventListener("submit", async (app) => {
     app.preventDefault();
@@ -24,7 +24,7 @@ form.addEventListener("submit", async (app) => {
     following.innerHTML += response.data.following;
     followers.innerHTML += response.data.followers;
   } catch (err) {
-    alert(err.response.data.message);
+    alert('Invalid User Name');
   }
 });
 
