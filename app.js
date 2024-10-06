@@ -1,17 +1,17 @@
 let form = document.querySelector("#form");
-let main = document.querySelector("#main");8
+let main = document.querySelector("#main");
+let btn = document.querySelector("#sub-btn");
 main.style.display = "none"
 form.addEventListener("submit", async (app) => {
     app.preventDefault();
     let imgTag = main.children[0];
     let name = main.children[1];
-    let following = main.children[2].children[0];
-    let followers = main.children[2].children[1];
-    let repo = main.children[2].children[2];
+    let following = main.children[2].children[0].children[0];
+    let followers = main.children[2].children[1].children[0];
+    let repo = main.children[2].children[2].children[0];
     let link = main.children[3].children[0];
-    
+    btn.style.display = "none"
     let value = app.target.children[0].value;
-    
     let userApi = `https://api.github.com/users/${value}`;
     
     try {
