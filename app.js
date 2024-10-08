@@ -1,6 +1,13 @@
 let form = document.querySelector("#form");
 let main = document.querySelector("#main");
 let btn = document.querySelector("#sub-btn");
+let backBtn = document.querySelector("#btn");
+
+backBtn.addEventListener('click',()=>{
+  window.location.reload()
+})
+
+
 main.style.display = "none"
 form.addEventListener("submit", async (app) => {
     app.preventDefault();
@@ -14,19 +21,25 @@ form.addEventListener("submit", async (app) => {
     let value = app.target.children[0].value;
     let userApi = `https://api.github.com/users/${value}`;
     
+    
     try {
       main.style.display = "block"
-    let response = await axios(userApi);
-    imgTag.src = response.data.avatar_url;
+      let response = await axios(userApi);
+      imgTag.src = response.data.avatar_url;
     name.innerHTML += response.data.name;
     link.href = response.data.html_url;
     repo.innerHTML += response.data.public_repos;
     following.innerHTML += response.data.following;
     followers.innerHTML += response.data.followers;
+  
   } catch (err) {
     alert('Invalid User Name');
   }
 });
+
+
+
+
 
 
 
